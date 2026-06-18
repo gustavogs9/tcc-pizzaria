@@ -1,6 +1,8 @@
 
 import styles from "./MenuFuncionario.module.css"
 
+import { Link } from "react-router-dom"
+
 
 const MenuFuncionario = () => {
 
@@ -8,9 +10,12 @@ const MenuFuncionario = () => {
         <div>
        <nav className={`navbar navbar-expand-lg navbar-light bg-light p-2 rounded shadow-sm w-100 ${styles.menu}`}>
         
-        <a className={`navbar-brand ${styles.logo}`} href="/pizzaria/funcionario/home">
+        <Link 
+          to="/home"
+          className={`navbar-brand ${styles.logo}`}
+        >
           Home
-        </a>
+        </Link>
 
         {/* Botão Hamburguer para telas menores */}
         <button
@@ -28,19 +33,28 @@ const MenuFuncionario = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto">
             <li className="nav-item active">
-              <a className={`nav-link ${styles.itemMenu}`} href="/pizzaria/funcionario/produtos">
+              <Link
+              to="/produtos"
+              className={`nav-link ${styles.itemMenu}`}
+              >
                 Produtos
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className={`nav-link ${styles.itemMenu}`} href="/pizzaria/funcionario/categorias">
+              <Link
+              to="/categorias"
+              className={`nav-link ${styles.itemMenu}`}
+              >
                 Categorias
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className={`nav-link ${styles.itemMenu}`} href="/pizzaria/funcionario/estoques">
+              <Link
+              to="/estoques"
+              className={`nav-link ${styles.itemMenu}`}
+              >
                 Estoque
-              </a>
+              </Link>
             </li>
 
             {/* Dropdown Menu */}
