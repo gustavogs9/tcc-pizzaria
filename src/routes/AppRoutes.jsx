@@ -1,37 +1,38 @@
 import {
+    HashRouter,
     BrowserRouter,
     Routes,
     Route
 } from "react-router-dom"
-
+ 
 import HomeFuncionario from "../pages/HomeFuncionario/HomeFuncionario"
 import ListarProduto from "../pages/ListarProduto/ListarProduto"
-
-
-
+ 
+// BrowserRouter: recarrega toda pagina
+// HashRouter: reccarega somente onecessario das paginas
+ 
 const AppRoutes = () =>{
-
+ 
     return (
-     <BrowserRouter>
+     <HashRouter>
         <Routes>
-          
-           <Route 
+         
+           <Route
              path="/"
              element={<HomeFuncionario/>}
            />
-            <Route 
-             path="/pizzaria/funcionario/home"
+            <Route
+             path="/home"
              element={<HomeFuncionario/>}
            />
-           <Route 
-             path="/pizzaria/funcionario/produtos"
+           <Route
+             path="/produtos"
              element={<ListarProduto/>}
            />
-
+ 
         </Routes>
-     
-     </BrowserRouter>
+     </HashRouter>
     )
 }
-
+ 
 export default AppRoutes
