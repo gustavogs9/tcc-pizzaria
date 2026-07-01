@@ -6,16 +6,16 @@ const ListarProduto = () => {
         {
             id: 1,
             nome: "Pizza Margherita",
-            preco: 25.90
+            preco: 25.90,
+            descricao: "teste"
         },
         {
             id: 2,
             nome: "Pizza Pepperoni",
-            preco: 28.90
+            preco: 28.90,
+            descricao: "teste"
         }
     ];
- 
- 
  
     return (
         <div className="container">
@@ -37,12 +37,17 @@ const ListarProduto = () => {
  
                         {arrayProdutos.map((produto) => (
  
-                            <tr>
-                                <td style={{ fontSize: "13px" }}></td>
+                            <tr key={produto.id}>
+                                <td style={{ fontSize: "13px" }}> {produto.nome}</td>
                                 <td style={{ fontSize: "13px" }}>
- 
+                                    {
+                                        new Intl.NumberFormat("pt-BR", {
+                                            style: "currency",
+                                            currency: "BRL",
+                                        }).format(produto.preco)
+                                    }
                                 </td>
-                                <td style={{ fontSize: "13px" }}></td>
+                                <td style={{ fontSize: "13px" }}> {produto.descricao} </td>
                                 <td className="text-center fs-6" style={{ width: "100px" }}>
                                     {/* Botão de Editar */}
                                     <button
@@ -61,7 +66,7 @@ const ListarProduto = () => {
                             </tr>
                         ))}
  
-                       
+ 
  
                     </tbody>
                 </table>
@@ -71,4 +76,3 @@ const ListarProduto = () => {
 }
  
 export default ListarProduto
- 
